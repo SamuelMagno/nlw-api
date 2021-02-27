@@ -29,6 +29,7 @@ describe("Users", () =>{
   })
   afterAll(async() => {
     const connection = await createConnection()
-    await connection.undoLastMigration()
+    await connection.dropDatabase()
+    await connection.close()
   })
 })
